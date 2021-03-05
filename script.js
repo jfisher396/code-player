@@ -22,19 +22,29 @@ $(document).ready(function () {
     // toggles the hidden class on and off
     $("#" + panelId).toggleClass("hidden");
     // determines the number of active panels and adjusts each's width accordingly
-    const activePanels = 4 - $('.hidden').length;
-    console.log(activePanels)
-    $(".panel").width($(window).width() / activePanels);
+    const activePanels = 4 - $(".hidden").length;
+    console.log(activePanels);
+    $(".panel").width(($(window).width() / activePanels) -10);
   });
 
   // makes the textarea height equal to window height minus the height of the header
-  $("textarea").height($(window).height() - $("#header").height() - 15);
+  $(".panel").height($(window).height() - $("#header").height() - 15);
+
+  $(".panel").width(($(window).width() / 2) - 10);
 
   // sets the contents of the output panel to whatever is in the html panel on page load
   $("iframe").contents().find("html").html($("#html-panel").val());
 
   // refreshes the contents of the output panel if any changes are made to the html panel
   $("textarea").on("change keyup paste", function () {
-    $("iframe").contents().find("html").html($("#html-panel").val());
+    $("iframe")
+      .contents()
+      .find("html")
+      .html(
+        "<html><head><style type='text/css'>" +
+          $("#css-panel").val() +
+          "</style></head><body>" +
+          $("#html-panel").val() + "</body></html>"
+      );
   });
 });
