@@ -8,9 +8,10 @@ body {
   color: #444444;
 }
 
+/* header styling */
 #header {
   width: 100%;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   padding: 5px;
   height: 30px;
 }
@@ -25,7 +26,6 @@ body {
 #button-container {
   margin: 0 auto;
   width: 300px;
-  
 }
 
 .toggle-button {
@@ -37,7 +37,7 @@ body {
 }
 
 .active {
-  background-color: #E8F2FF;
+  background-color: #e8f2ff;
 }
 
 .highlighted-button {
@@ -55,6 +55,18 @@ body {
   border-right: 1px solid #444444;
 }
 
-#html-textarea {
+/*text area styling*/
+textarea {
+  resize: none;
+  border-top: none;
+  border-color: grey;
+}
+
+iframe {
+  border: none;
+}
+
+.panel {
+  float: left;
   width: 50%;
 }

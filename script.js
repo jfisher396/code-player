@@ -18,5 +18,6 @@ $(document).ready(function () {
   });
 
   // makes the textarea height equal to window height minus the height of the header
-  $("textarea").height($(window).height() - $("#header").height());
+  $("textarea").height($(window).height() - $("#header").height() - 15);
+  $(".panel").width(($(window).width() / 2) - 10);
 });
