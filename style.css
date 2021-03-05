@@ -36,6 +36,14 @@ body {
   font-size: 90%;
 }
 
+.active {
+  background-color: #E8F2FF;
+}
+
+.highlighted-button {
+  background-color: grey;
+}
+
 #html {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
