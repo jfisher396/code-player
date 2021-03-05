@@ -17,7 +17,9 @@ body {
 
 #logo {
   float: left;
-  padding: 5px;
+  font-weight: bold;
+  font-size: 120%;
+  padding: 3px 5px;
 }
 
 #button-container {
