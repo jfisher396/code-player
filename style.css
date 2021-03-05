@@ -56,6 +56,7 @@ body {
 }
 
 /*text area styling*/
+
 textarea {
   resize: none;
   border-top: none;
@@ -69,4 +70,8 @@ iframe {
 .panel {
   float: left;
   width: 50%;
+}
+
+.hidden {
+  display: none;
 }
