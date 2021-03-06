@@ -1,6 +1,15 @@
 console.log("script.js is working");
 
+    
+
 $(document).ready(function () {
+
+    function updateOutput() {
+        
+        $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + $("#css-panel").val() + "</style></head><body>" + $("#html-panel").val() + "</body></html>");
+        document.getElementById("output-panel").contentWindow.eval($("#javascript-panel").val());
+    }
+    
   // changes background color of buttons when hovered over
   $(".toggle-button").hover(
     function () {
@@ -32,19 +41,14 @@ $(document).ready(function () {
 
   $(".panel").width(($(window).width() / 2) - 10);
 
+  updateOutput();
+
   // sets the contents of the output panel to whatever is in the html panel on page load
   $("iframe").contents().find("html").html($("#html-panel").val());
 
-  // refreshes the contents of the output panel if any changes are made to the html panel
+  // refreshes the contents of the output panel if any changes are made to the other panels
   $("textarea").on("change keyup paste", function () {
-    $("iframe")
-      .contents()
-      .find("html")
-      .html(
-        "<html><head><style type='text/css'>" +
-          $("#css-panel").val() +
-          "</style></head><body>" +
-          $("#html-panel").val() + "</body></html>"
-      );
+    updateOutput()
   });
+  
 });
